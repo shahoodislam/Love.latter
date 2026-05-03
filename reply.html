@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reply to My Moteee ❤️</title>
 
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial;
+            background: linear-gradient(135deg, #0f0f1a, #2b1b2e);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            margin-top: 15px;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+            outline: none;
+        }
+
+        .msg {
+            margin-top: 15px;
+            color: #ffb3c1;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Reply to me ❤️</h1>
+
+    <p>My moteee… write anything you feel 💌</p>
+
+    <textarea id="replyText" placeholder="Write here..."></textarea>
+
+    <div class="msg" id="show"></div>
+</div>
+
+<script>
+function sendReply(){
+    let text = document.getElementById("replyText").value;
+
+    if(text.trim() !== ""){
+        localStorage.setItem("alishaReply", text);
+
+        document.getElementById("show").innerHTML =
+        "Message sent ❤️<br><br>Thank you my moteee 💖";
+    }
+}
+
+/* show saved reply if exists */
+window.onload = function(){
+    let saved = localStorage.getItem("alishaReply");
+
+    if(saved){
+        document.getElementById("show").innerHTML =
+        "Her last reply 💌:<br><br>" + saved;
+    }
+}
+</script>
+
+</body>
+  
